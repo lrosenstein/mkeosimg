@@ -73,6 +73,7 @@ losetup $DEVICE $IMG
 parted --script $DEVICE mktable msdos
 parted --script $DEVICE mkpart primary fat32 1 150MB
 parted --script $DEVICE mkpart primary ext3 150MB 100%
+losetup -P $DEVICE $IMG
 
 echo "Formatting $IMG"
 mkfs.msdos -F 32 $DEVICE_BOOT
