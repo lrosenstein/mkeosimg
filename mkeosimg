@@ -57,7 +57,7 @@ else
     CONFIGURED_SUFFIX=""
 fi
 
-IMG=${TARBALL%.tar}${CONFIGURED_SUFFIX}.img
+IMG=`basename ${TARBALL%.tar}`${CONFIGURED_SUFFIX}.img
 rm -f $IMG.gz
 
 # If no drive size was supplied as a parameter, default to 2 GB
